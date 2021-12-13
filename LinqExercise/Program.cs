@@ -24,14 +24,51 @@ namespace LinqExercise
              */
 
             //Print the Sum and Average of numbers
+            Console.WriteLine();
+            var sum = numbers.Sum(x => x);
+            Console.WriteLine($"The sum of the array is {sum}.");
+
+            Console.WriteLine("-----------------------------------");
 
             //Order numbers in ascending order and decsending order. Print each to console.
+            var asc = numbers.OrderBy(x => x);
+            var desc = numbers.OrderByDescending(y => y);
+            Console.WriteLine("Ascending order...");
+            foreach ( var item in asc )
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine("_________________________________");
+
+            Console.WriteLine("Descending order...");
+            foreach ( var item in desc )
+            {
+                Console.WriteLine(item);
+            }
+
+            Console.WriteLine("___________________________________");
+
 
             //Print to the console only the numbers greater than 6
+            Console.WriteLine("numbers greater than 6");
+            var six = numbers.OrderBy(x => x > 6);
+            foreach ( var item in six )
+            {
+                Console.WriteLine(item);
+            }
 
+            Console.WriteLine("_________________________________________");
             //Order numbers in any order (acsending or desc) but only print 4 of them **foreach loop only!**
-
+            var vs = numbers.OrderBy(x => x).Take(4);
+            Console.WriteLine("return first 4");
+            foreach ( var item in vs )
+            {
+                Console.WriteLine(item);
+            }
             //Change the value at index 4 to your age, then print the numbers in decsending order
+
+            Console.WriteLine("___________________________________________");
+            var changeIndex = numbers.Append(4)
 
             // List of employees ***Do not remove this***
             var employees = CreateEmployees();
